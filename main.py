@@ -4,25 +4,25 @@ import os
 import asyncio
 import keep_alive
 
-client = commands.Bot(command_prefix = '!')
+client = commands.Bot(command_prefix = '!') # The bot's prefix
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="!sign", type=3)
+    activity = discord.Game(name="!sign | #BanRjain", type=3) # Here is where you can change the status of the bot.
     await client.change_presence(status=discord.Status.idle, activity=activity)
-    print("I'm alive!")
+    print("I'm alive!") # This is what it prints in the cosolw when it is ready
 
 @client.command()
 async def sign(ctx):
-    if ctx.author._roles.has(940679057517977650):
+    if ctx.author._roles.has(940679057517977650): # This is the role that is unable to sign
         await ctx.send(":x: | You have already signed this petition")
     else:
-        await ctx.reply(":white_check_mark: | Successfully signed the petition for the following:\n`#BanRjain`")
+        await ctx.reply(":white_check_mark: | Successfully signed the petition for the following:\n`#BanRjain`") # You can change the name of the petition here
     await asyncio.sleep(5)
-    channel = await client.fetch_channel(940779168193445959)
-    await channel.send(f"{ctx.author.mention} has signed the petition!")
-    member = ctx.author
-    await member.add_roles(discord.Object(940679057517977650))
+    log_channel = await client.fetch_channel(940779168193445959) # The channel where it logs all of votes
+    await log_channel.send(f"{ctx.author.mention} has signed the petition!") # This is the message that it sends it the logchannel
+    member = ctx.author # This defines the member
+    await member.add_roles(discord.Object(940679057517977650)) # This is the role that it adds
 
 
 keep_alive.keep_alive()
