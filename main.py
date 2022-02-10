@@ -26,4 +26,4 @@ async def sign(ctx):
 
 
 keep_alive.keep_alive()
-client.run(os.getenv("TOKEN"))
+client.run(os.getenv("TOKEN")) # Make sure to add an env token
