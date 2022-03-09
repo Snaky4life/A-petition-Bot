@@ -10,7 +10,7 @@ client = commands.Bot(command_prefix = '!') # The bot's prefix
 async def on_ready():
     activity = discord.Game(name="!sign | #BanRjain", type=3) # Here is where you can change the status of the bot.
     await client.change_presence(status=discord.Status.idle, activity=activity)
-    print("I'm alive!") # This is what it prints in the cosolw when it is ready
+    print("I'm alive!") # This is what it prints in the cosole when it is ready
 
 @client.command()
 async def sign(ctx):
