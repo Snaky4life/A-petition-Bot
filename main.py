@@ -14,14 +14,14 @@ async def on_ready():
 
 @client.command()
 async def sign(ctx):
-    if ctx.author._roles.has(940679057517977650): # This is the role that is unable to sign
+    if ctx.author._roles.has(role id): # This is the role that is unable to sign
         return await ctx.send(":x: | You have already signed this petition")
     else:
         await ctx.reply(f"<:RJainScammer:941399190439862293> | Successfully signed the petition for the following:\n`#BanRjain`") # You can change the name of the petition here
-    log_channel = await client.fetch_channel(940779168193445959) # The channel where it logs all of votes
+    log_channel = await client.fetch_channel(channel id) # The channel where it logs all of votes
     await log_channel.send(f"{ctx.author.mention} has signed the petition!") # This is the message that it sends it the logchannel
     member = ctx.author # This defines the member
-    await member.add_roles(discord.Object(940679057517977650)) # This is the role that it adds
+    await member.add_roles(discord.Object(role id)) # This is the role that it adds
 
 
 keep_alive.keep_alive()
